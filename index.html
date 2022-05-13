@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <title>WORDLE HELPER</title>
+        <head>
+            <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/main.css') }}">
+            <style> 
+            input[type=text] {
+                border: 2px solid #6aaa64;
+                background-color: #6aaa64;
+                border-radius: 3px;
+                margin: 2px;
+                font-size: 2rem;
+                font-weight: bold;
+                height: 3rem;
+                width: 3rem;
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                text-transform: uppercase;
+            }
+            input[type=texty] {
+                border: 2px solid #c9b458;
+                background-color: #c9b458;
+                border-radius: 3px;
+                margin: 2px;
+                font-size: 2rem;
+                font-weight: bold;
+                height: 3rem;
+                width: 10rem;
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                text-transform: uppercase;
+            }
+            input[type=textb] {
+                border: 2px solid black;
+                background-color: black;
+                border-radius: 3px;
+                margin: 2px;
+                font-size: 2rem;
+                font-weight: bold;
+                color: white;
+                height: 3rem;
+                width: 20rem;
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                text-transform: uppercase;
+            }
+            .button {
+                background-color: #04AA6D;
+                border-radius: 12px;
+                border: none;
+                color: white;
+                padding: 5px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 15px;
+                margin: 4px 2px;
+            }
+            .buttonbig {
+                background-color: #04AA6D;
+                border-radius: 12px;
+                border: none;
+                color: white;
+                padding: 5px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 25px;
+                margin: 4px 2px;
+            }
+            </style>
+            </head>
+    <body bgcolor="#F0F8FF">
+    <h1><font color="green">W<font color="black">O<font color="green">R<font color="black">D<font color="green">L<font color="black">E HELPER</h1>
+        <form action="/main" method="POST">
+            <p style="font-size:24px;">CORRECT</p>
+            <div><input id="w1" type="text" name="w1" maxlength="1" value={{w1}}>
+            <input id="w2" type="text" name="w2" maxlength="1" value={{w2}}>
+            <input id="w3" type="text" name="w3" maxlength="1" value={{w3}}>
+            <input id="w4" type="text" name="w4" maxlength="1" value={{w4}}>
+            <input id="w5" type="text" name="w5" maxlength="1" value={{w5}}></div>
+            
+            <p style="font-size:24px;">MISPLACED</p>
+            <div><input id="must" type="texty" name="must" maxlength="10" value={{must}}></div>
+            
+            <p style="font-size:24px;">REJECTED</p>
+            <div><input id="nword" type="textb" name="nword" maxlength="25" label=""REJECTED" value={{nword}}></div>
+            <input class="buttonbig" type="submit" value ="Search">
+            <br>
+            <!-- <p style="font-size:34px;"><input style="font-weight: bold;font-size:30px; color:green" type="submit" value="Start the search" /></p> -->
+        <!-- </form>
+
+        <form method="GET"> -->
+           {% for l in list %}
+                <button class="button">{{l}}</button>
+           {% endfor %}
+        </form>
+    </body>
+</html>
